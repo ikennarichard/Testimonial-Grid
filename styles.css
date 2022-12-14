@@ -19,11 +19,280 @@
 }
 
 
+* {
+    box-sizing: border-box;
+}
+
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+
 body {
     display: grid;
     place-items: center;
     min-height: 100vh;
+    margin: 0;
+    padding: 2em 0.8em;
+    font-family: var(--barlow-font);
+    background-color: var(--light-grayish-blue)
+}
+
+main {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+small {
+    display: block;
+    margin: 0;
+    opacity: 50%;
+    font-size: 0.7rem;
+}
+
+
+h2 {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+
+.text {
+    color: var(--white);
+    font-size: 1.1rem;
+    /* width: 14.5em; */
+    /* word-spacing: 9px; */
+}
+
+
+
+.quote {
+    color: var(--white);
+    opacity: 70%;
+    font-size: 0.8em;
+    text-align: left;
+    /* width: 21.2em; */
+    line-height: 1.5em;
+}
+
+
+h2, small {
+    color: var(--white);
+}
+
+
+section {
+    display: grid;
+    gap: 0px;
+    padding: 2em;
+    /* border: 1px solid; */
+    /* width: 21em; */
+    outline: none;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 11px 2px gray;
+}
+
+
+.profile_ {
+    /* border: 1px solid; */
+    display: flex;
+    gap: 0;
+}
+
+
+.profile_name {
+    /* border: 1px solid; */
+    margin-inline-start: 16px;
+    line-height: 4px;
+    padding: 0;
+    margin-block-start: -0.2em;
+}
+
+
+.profile_image {
+    border: 2px solid var(--light-gray);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* sections--------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.daniel {
+    background: url(./images/bg-pattern-quotation.svg) no-repeat top right var(--moderate-violet);
+    color: var(white);
+    background-position: 70% 0;
+}
+
+
+.jonathan {
+    background-color: var(--very-dark-grayish-blue)
+}
+
+/* jeanette */
+.jeanette {
+    background-color: var(--white);
+}
+
+.jeanette h2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+.jeanette .text {
+    color: var(--very-dark-grayish-blue);
+}
+
+
+.jeanette .quote {
+    color: var(--very-dark-grayish-blue);
+}
+
+.jeanette small {
+    color: var(--very-dark-grayish-blue);
+}
+
+/* patrick */
+.patrick {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.patrick h2 {
+    color: var(--light-gray);
+}
+
+
+.patrick small {
+    color: var(--light-gray);
+}
+
+.patrick .text {
+    color: var(--light-gray);
+}
+
+.patrick .quote {
+    color: var(--light-gray);
+}
+
+
+.kira {
+    background-color: var(--white);
+}
+
+
+.kira h2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+
+.kira small {
+    color: var(--very-dark-grayish-blue);
+}
+
+.kira .text {
+    color: var(--very-dark-grayish-blue);
+    width: 9em;
+    
+}
+
+.kira .quote {
+    color: var(--very-dark-grayish-blue);
 }
 
 
 /* media-queries-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+@media (min-width: 800px) {
+
+    main {
+        grid-auto-columns: 1fr;
+        grid-template-areas: 
+        'daniel daniel'
+        'patrick patrick'
+        'jonathan jeanette'
+        'kira kira';
+
+    }
+
+    /* grid-areas--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    .daniel {
+        grid-area: daniel;
+    }
+
+
+    .jonathan {
+        grid-area: jonathan;
+    }
+
+
+    .kira {
+        grid-area: kira;
+    }
+
+
+    .jeanette {
+        grid-area: jeanette;
+    }
+
+
+    .patrick {
+        grid-area: patrick;
+    }
+
+}
+
+@media (min-width: 970px) {
+
+    main {
+        grid-auto-columns: 1fr;
+        grid-template-areas: 
+        'daniel daniel jonathan kira'
+        'jeanette patrick patrick kira';
+
+    }
+
+
+    section {
+        padding: 2em; 
+        text-align: justify;
+        text-align: left;
+    }
+
+
+
+    /* grid-areas---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    .daniel {
+        grid-area: daniel;
+    }
+
+
+    .jonathan {
+        grid-area: jonathan;
+    }
+
+
+    .kira {
+        grid-area: kira;
+    }
+
+
+    .jeanette {
+        grid-area: jeanette;
+    }
+
+
+    .patrick {
+        grid-area: patrick;
+    }
+}
